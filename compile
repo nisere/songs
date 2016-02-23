@@ -1,0 +1,3 @@
+mkdir class_directory
+javac -classpath ../scala-2.11.7/lib/scala-library.jar:../spark-1.5.2-bin-hadoop2.6/lib/spark-assembly-1.5.2-hadoop2.6.0.jar -d class_directory src/util/*.java src/challenge3/*.java
+jar -cvf challenge3.jar -C class_directory .

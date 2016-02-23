@@ -1,0 +1,4 @@
+../spark-1.5.2-bin-hadoop2.6/bin/spark-submit --class challenge3.Task1 --master spark://nisere-K53TA:7077 challenge3.jar MillionSongSubsetConverted > task1 2> /dev/null
+../spark-1.5.2-bin-hadoop2.6/bin/spark-submit --class challenge3.Task2 --master spark://nisere-K53TA:7077 challenge3.jar MillionSongSubsetConverted > task2 2> /dev/null
+../spark-1.5.2-bin-hadoop2.6/bin/spark-submit --class challenge3.Task3 --master spark://nisere-K53TA:7077 challenge3.jar MillionSongSubsetConverted > task3 2> /dev/null
+../spark-1.5.2-bin-hadoop2.6/bin/spark-submit --class challenge3.Task4 --master spark://nisere-K53TA:7077 challenge3.jar MillionSongSubsetConverted > task4 2> /dev/null

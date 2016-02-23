@@ -1,0 +1,51 @@
+Task1
+
+- ran Task1
+- saved output in file task1
+- cat task1 | sort -n > output
+- deleted first line (with year 0) in output
+- plot "output" using 1:($3/$2) w l title "Loudness"
+- generated loudness.png
+
+Task2
+
+- ran Task2
+- saved output in file task1
+- cat task2 | sort -n > output
+- deleted the lines with year 0 in output
+- cat output | grep ^0 > output0
+- cat output | grep ^1 > output1
+- plot "output0" using 2:($4/$3) w l title "Loudness minor", \
+"output1" using 2:($4/$3) w l title "Loudness major"
+- generated loudness.png
+- plot "output0" using 2:($5/$3) w l title "Tempo minor", \
+"output1" using 2:($5/$3) w l title "Tempo major"
+- generated tempo.png
+
+Task3
+
+- ran Task3
+- saved output in file task3
+- computed average: cat task3 | awk -f script.awk > output
+- sorted by count: sort -n -k 2 output | cut -f 1 -d ' ' > count
+- sorted by loudness: sort -n -k 3 output | cut -f 1 -d ' ' > loudness
+- sorted by tempo: sort -n -k 4 output | cut -f 1 -d ' ' > tempo
+
+Task4
+
+- ran Task4
+- saved output in file task4
+- cat task4 | awk -f script.awk > matrix
+
+Task4 explanation
+
+I extended GenreDetector with MyGenreDetector and created a new method:
+public Tuple2<Genre, float[]> detectGenreCrossover(String[] terms, float[] importances);
+This method is identical with detectGenre excepts that it also returns the genreImportances array.
+I used this array to sum up the values of genreImportances of all songs that belong to a genre, for each genre.
+For a specific genre, the maximum value of the summed up genreImportances is found on the position given by the genre ordinal.
+I put this position in the output besides the values in the summed up genreImportances.
+I computed the crossover for a specific genre by dividing each value by the maximum for that genre.
+This way in the matrix the diagonal holds only 1 and the rest of the matrix values between 0 and 1.
+The matrix also contains OTHER genre but it should be ignored.
+
